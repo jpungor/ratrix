@@ -14,7 +14,7 @@ for j = 1:length(use);
     %%% generate sbx filename
     sbx_fname{j} = [T.Date{i} '_octo_cal520_000_' sprintf('%03d',T.RecordingNumber(i)) '.sbx'];
     if ~exist(sbx_fname{j},'file')
-        sbx_fname{j} = [T.Date{i} '_Octopus_Cal520_000_' sprintf('%03d',T.RecordingNumber(i)) '.sbx'];
+        sbx_fname{j} = [T.Date{i} '_octo_cal520_000_' sprintf('%03d',T.RecordingNumber(i)) '.sbx'];
         %sprintf('couldnt find %s',sbx_fname{j})
     end
     
@@ -38,17 +38,17 @@ for j = 1:length(use);
     try
         runBatch{j}=T.runBatch{i};
     catch
-        runBatch{j} = NaN;
+        runBatch{j} = 'Y';
     end
 
 
     
 end
 
-metadata.illumination = {T.Illumination{use}};
-metadata.eyeSize = T.EyeSize(use);
-metadata.lobeSize = T.LobeSize(use);
-metadata.lobeOrientation = {T.LobeOrientation{use}};
+% metadata.illumination = T.Illumination(use);
+% metadata.eyeSize = T.EyeSize(use);
+% metadata.lobeSize = T.LobeSize(use);
+% metadata.lobeOrientation = {T.LobeOrientation{use}};
 metadata.fname = {mat_fname};
-mmPerPix = (T.MirrorTypemm(use) - 5)./T.MirrorEdge_pixel(use);
-metadata.screenDist  = 5 + (T.MirrorEdge_pixel(use)+T.PupilDist_pixel(use)).*mmPerPix;
+% mmPerPix = (T.MirrorTypemm(use) - 5)./T.MirrorEdge_pixel(use);
+% metadata.screenDist  = 5 + (T.MirrorEdge_pixel(use)+T.PupilDist_pixel(use)).*mmPerPix;

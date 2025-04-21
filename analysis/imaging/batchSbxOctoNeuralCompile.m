@@ -4,10 +4,10 @@ close all
 %% uses excel compile file to choose files, stim, etc
 
 stim_name = '8 way gratings 2ISI'
-suffix = '_denoised_Zbin95_8way_111122';
-outFolder = '8way_110822/'
+suffix = '_testing';
+outFolder = 'SNtrial/'
 %%% select files to analyze
-[sbx_fname acq_fname mat_fname quality regioned runBatch] = compileFilenames('CombinedBatch_GoodOnes.xlsx',stim_name,suffix);
+[sbx_fname acq_fname mat_fname quality regioned runBatch] = compileFilenames('2024_2025_data_batch.xlsx',stim_name,suffix);
 
 
 %% General Parameters
