@@ -5,7 +5,7 @@ close all
 
 stim_name = '8 way gratings 2ISI'
 suffix = '_testing';
-outFolder = 'SNtrial/'
+outFolder = 'testing/'
 %%% select files to analyze
 [sbx_fname acq_fname mat_fname quality regioned runBatch] = compileFilenames('2024_2025_data_batch.xlsx',stim_name,suffix);
 
